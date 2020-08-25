@@ -1,0 +1,7 @@
+.form-group {
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 30px;
+    width: 300px;
+}
