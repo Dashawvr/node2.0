@@ -13,19 +13,19 @@
 <form action="/reg" method="post">
     <div>
         <label for="name">Username</label>
-        <input class="form-group" type="text" name="name" placeholder="Username">
+        <input class="form-group" type="text" name="name" placeholder="Username" required autofocus>
     </div>
     <div>
         <label for="email">Email</label>
-        <input class="form-group" type="email" name="email" placeholder="Email">
+        <input class="form-group" type="email" name="email" placeholder="Email" required>
     </div>
     <div>
         <label for="password">Password</label>
-        <input  class="form-group" type="password" name="password" placeholder="Password">
+        <input  class="form-group" type="password" name="password" placeholder="Password" required>
     </div>
     <div>
         <label for="rePass">Re-Enter Pass</label>
-        <input class="form-group" type="password" name="rePass" placeholder="Password">
+        <input class="form-group" type="password" name="rePass" placeholder="Password" required>
     </div>
     <input type="submit" value="Register">
 </form>

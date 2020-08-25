@@ -7,6 +7,11 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(express.static(path.join(process.cwd(), 'views')))
 
+let arr = [
+    {name: 'Dasha', age: 19},
+    {name: 'Viktor', age: 24}
+];
+
 // settings
 app.set('view engine', '.hbs')
 app.engine('.hbs', expressHandlebars({defaultLayout: false}))
@@ -31,6 +36,39 @@ app.post('/login', (req, res)=> {
     // res.end('Login successfully')
     res.redirect('/');
 })
+// ---
+app.get(`/user`, (req, res) => {
+    res.render(`user`, {list: arr})
+})
+let singleUser = []
+
+app.get(`/user/:single`, (req, res) => {
+    const {single} = req.params
+    const user = arr.filter((value, index) => {
+        if (value.name === single) {
+            return value
+        }
+    })
+    singleUser.push(user)
+    res.render(`delete`, {user: user})
+})
+
+app.post(`/user/:single/delete`, (req, res) => {
+    let isCorrect;
+    for (let usersListElement of arr) {
+        if (usersListElement.name === req.body.name){
+            isCorrect = true;
+            arr.splice(arr.indexOf(usersListElement),1 )
+        }else {
+            isCorrect= false
+        }
+    }
+    res.render(`last`, {corr: isCorrect})
+})
+
+
+
+
 
 ////
 app.get('/', (req, res)=> {

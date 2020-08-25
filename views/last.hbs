@@ -8,14 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-
-<div>
-    <div> Everything is Fine</div>
-    <div>Welcome !!!</div>
-    <div><a href="/user" >List users</a></div>
-    <div><a href="/render-reg">Register</a></div>
-    <div><a href="/login">Log in</a></div>
-</div>
-
+{{#if corr}}
+    <h2>Your profile was deleted</h2>
+{{else}}
+    <h2>You entered incorrect pass, sorry we cann't delete this profile</h2>
+{{/if}}
+<a href="/render-reg">back to registration page</a>
+<br/>
+<a href="/users">back to users page</a>
 </body>
 </html>

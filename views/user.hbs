@@ -9,13 +9,12 @@
 </head>
 <body>
 
-<div>
-    <div> Everything is Fine</div>
-    <div>Welcome !!!</div>
-    <div><a href="/user" >List users</a></div>
-    <div><a href="/render-reg">Register</a></div>
-    <div><a href="/login">Log in</a></div>
-</div>
+{{#each list}}
+    <div>
+        Hello,{{this.name}} How Are you?
+        <a href="/user/{{this.name}}">Delete</a>
+    </div>
+{{/each}}
 
 </body>
 </html>

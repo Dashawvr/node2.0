@@ -11,13 +11,18 @@
     <form action="/login" method="post">
         <div>
             <label for="name">Username</label>
-            <input class="form-group" type="text" name="name" placeholder="Username">
+            <input class="form-group" type="text" name="name" placeholder="Username" required>
         </div>
         <div>
             <label for="password">Password</label>
-            <input  class="form-group" type="password" name="password" placeholder="Password">
+            <input  class="form-group" type="password" name="password" placeholder="Password" required>
         </div>
         <input type="submit" value="Log in">
+        <div>
+            <label for="regist">You Haven't Account?</label>
+            <div><a name="regist" href="/render-reg">Register</a></div>
+        </div>
+
     </form>
 </body>
 </html>
