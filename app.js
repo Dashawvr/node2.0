@@ -58,8 +58,8 @@ app.post('/login', (req, res)=> {
         res.redirect('/login')
     }
 });
-// user
-app.get('/user', (req, res)=> {
+// users
+app.get('/users', (req, res)=> {
     res.render('user', {user: arr, hasUsers: arr.length > 0,});
     console.log(arr);
 })
