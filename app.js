@@ -64,55 +64,6 @@ app.get('/user', (req, res)=> {
     console.log(arr);
 })
 
-// app.post('/users-post', (req,res)=> {
-//     const email = req.body.email;
-//    arr.push({name: req.body.username, email: req.body.email, password: req.body.password})
-//     // console.log(users)
-//     res.redirect('/login');
-// })
-
-// // ---
-// app.get(`/user`, (req, res) => {
-//     res.render(`user`, {list: arr})
-// })
-// let singleUser = []
-// app.get(`/:single`, (req, res) => {
-//     const { single } = req.params
-//     const user = arr.filter((value, index) => {
-//         if (value.name === single) {
-//             return value
-//         }
-//     })
-//     singleUser.push(user)
-//     res.render(`delete`, {user: user})
-// })
-//
-// app.post(`/:single/delete`, (req, res) => {
-//     let isCorrect;
-//     for (let usersListElement of arr) {
-//         if (usersListElement.name === req.body.nam){
-//             isCorrect = true;
-//             arr.splice(arr.indexOf(usersListElement),1 )
-//         }else {
-//             isCorrect= false
-//         }
-//     }
-//     res.render(`last`, {corr: isCorrect})
-// });
-
-//
-//
-// app.get('/users', (req, res)=> {
-//     res.json([
-//         {name: 'Dima', age: 23},
-//         {name: 'Irena', age: 22}
-//     ])
-// });
-//
-// app.post('/users', (req, res)=> {
-//     res.end('All users here')
-// });
-
 //port
 app.listen(5000, (err) => {
     if (err) {
