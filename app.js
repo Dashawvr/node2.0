@@ -31,10 +31,16 @@ app.get('/render-reg', (req, res)=> {
 
 app.post('/reg', (req,res)=> {
     console.log(req.body.name);
-    const email = req.body.email
-    arr.push({name: req.body.name, email: req.body.email, password: req.body.password})
-    // res.end('Register successfully')
-    res.redirect('/');
+
+    const regist = arr.find(value => value.email === req.body.email);
+    if (regist === undefined) {
+        arr.push({name: req.body.name, email: req.body.email, password: req.body.password})
+        res.redirect('/');
+    } else {
+        // не дає зареєструвати юзера бо такий юзер вже існує в user List
+        res.redirect('/render-reg');
+    //    і редіректає його на ту саму стору
+    }
 })
 
 //logination
@@ -44,9 +50,9 @@ app.get('/login', (req, res)=> {
 
 app.post('/login', (req, res)=> {
     console.log(req.body);
-    const result = arr.find(value => value.password === req.body.password);
-    user.push(result)
-    if (result == false) {
+    const login = arr.find(value => value.password === req.body.password);
+    user.push(login)
+    if (login === false) {
         res.redirect('/render-reg')
     } else {
         res.redirect('/login')

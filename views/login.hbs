@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form action="/login" method="post">
@@ -20,17 +21,19 @@
         <input type="submit" value="Login">
         <div>
             <label for="regist">You Haven't Account?</label>
-            <div><a name="regist" href="/render-reg">Register</a></div>
+            <div><a class="href" name="regist" href="/render-reg">Register</a></div>
         </div>
+    </form>
+    <div>
         {{#if isUsers}}
             {{#each users}}
                 <strong> Hi {{this.name}}, We happy to hear you!</strong>
-        {{/each}}
-            {{else}}
-                <strong>Something wrong!</strong>
+            {{/each}}
+        {{else}}
+            <strong>Something wrong!</strong>
         {{/if}}
-        <div><a href="/" >Go to the home page</a></div>
-    </form>
+        <div><a class="href" href="/" >Go to the home page</a></div>
+    </div>
 
 </body>
 </html>
