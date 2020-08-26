@@ -9,12 +9,16 @@
 </head>
 <body>
 
-{{#each list}}
-    <div>
-        Hello,{{this.name}} How Are you?
-        <a href="/user/{{this.name}}">Delete</a>
-    </div>
-{{/each}}
+{{#if hasUsers}}
+
+    <ul>
+        {{#each user}}
+            <li>{{ this.name }} {{this.email}}</li>
+        {{/each}}
+    </ul>
+{{else}}
+    <h2>Not Users Found!</h2>
+{{/if}}
 
 </body>
 </html>
